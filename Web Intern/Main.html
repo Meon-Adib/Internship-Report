@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internship Report</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<ul class="nav-center">
+    <li class="active"><a href="Main.html">Home</a></li><!--this is right -->
+    <li><a href="appreaction.html">Appreciation</a></li><!--this is right -->
+
+<li class="dropdown">
+    <a href="#">Report</a>
+
+    <ul class="dropdown-menu">
+        <li><a href="week report.html">Weekly</a></li>
+        <li><a href="#">Technical</a></li>
+    </ul>
+</li>
+    <li><a href="#">Overall</a></li>
+    <li><a href="#">Gallery</a></li>
+</ul>
+
+</nav>
+
+
+<!-- MAIN CONTAINER -->
+
+<div class="container">
+
+    <div class="banner-slider">
+
+<button class="nav-btn left" onclick="prevBanner()">❮</button>
+
+<div class="banner active">
+
+    <div class="banner-text">
+        <h1>ADIB SIRHAN BIN SAMSURI</h1>
+
+        <ul class="profile-info">
+            <li title="19/01/2005"><b>Age:</b> 21</li>
+            <li><b>Matriks No:</b> 17DDT23F1002</li>
+            <li><b>Program:</b> Diploma Teknologi Maklumat (Teknologi Digital)</li>
+            <li><b>Study:</b> Politeknik Sultan Idris Shah</li>
+            <li><b>Internship:</b> TM Technology Services Sdn. Bhd.</li>
+            <li><b>Duration:</b> 5 Jan 2026 - 22 May 2026</li>
+        </ul>
+
+        <button class="read">Read More</button>
+    </div>
+    <div class="banner-img-box">
+        <img src="Gallery/background.pn" class="banner-img">
+    </div>
+    
+
+</div>
+
+
+<div class="banner">
+
+    <div class="banner-text">
+        <h1>TM Technology Services Sdn. Bhd.</h1>
+
+        <ul class="profile-info">
+            <li><b>Year Established:</b> 1984</li>
+            <li><b>Headquarters:</b> Menara TM,Kuala Lumpur,Malaysia</li>
+            <li><b>Industry:</b> Telecommunications</li>
+            <li><b>Internship Location:</b> TM anexe 2</li>
+            <li><b>Department:</b> SQA</li>
+            <li><b>Supervisor:</b> Puan Alyani</li>
+        </ul>
+        <button class="read">Read More</button>
+    </div>
+    <div class="banner-img-box">
+        <img src="Gallery/tmlogo.png" class="banner-img">
+    </div>
+</div>
+
+
+<div class="banner">
+
+    <div class="banner-text">
+        <h1>Politeknik Sultan Idris Shah</h1>
+
+        <ul class="profile-info">  
+            <li><b>Established:</b> 2003</li>
+            <li><b>Pengarah:</b> PN. HASLINDA BINTI ABD HAMID</li>
+            <li><b>Location:</b> Sungai Lang, Sabak Bernam, Selangor</li>
+            <li><b>Type:</b> Public Polytechnic</li>
+            <li><b>Managed by:</b> Ministry of Higher Education Malaysia</li>
+            <li><b>Academic Advisor:</b>Sir Azrol</li>
+        </ul>
+        <button class="read">Read More</button>
+    </div>
+    <div class="banner-img-box">
+        <img src="Gallery/LOGO-PSIS-OFFICIAL-2019.png" class="banner-img">
+    </div>
+    
+</div>
+
+<button class="nav-btn right" onclick="nextBanner()">❯</button>
+
+</div>
+
+
+    <!-- LOWER GRID -->
+
+    <div class="grid">
+
+        <!-- Mini gallery -->
+
+        <div class="mini-gallery">
+
+            <h3>Gallery</h3>
+
+            <div class="art-grid">
+
+                <img src="Gallery/img1.jpg">
+                <img src="Gallery/img2.jpg">
+                <img src="Gallery/img3.jpg">
+                <img src="Gallery/img4.jpg">
+
+            </div>
+
+            <button class="view">View More</button>
+
+        </div>
+
+
+        <!-- INFO CARDS -->
+
+        <div class="info">
+
+            <div class="card">
+                <h4>OBJECTIVE LATIHAN INDUSTRI </h4>
+                <p>Mendedahkan pelajar kepada persekitaran dan suasana kerja yang sebenar.</p>
+                <p>Mempraktikkan teori yang dipelajari di universiti di dalam membuat dan menyelesaikan masalah dunia sebenar yang berkaitan dengan bidang pengkhususan masing-masing.</p>
+                <p>Memberi pendedahan terhadap pengetahuan dan perkembangan teknologi terkini yang diguna pakai di dalam industri.</p>
+                <p>Memupuk dan merapatkan jaringan serta jalinan kerjasama antara pihak universiti dan industri.</p>
+
+            </div>
+
+            <div class="card">
+                <h4>OBJECTIVE LAPORAN INDUSTRI</h4>
+                <p>Melatih pelajar untuk menyediakan dokumen kerja dengan berkesan.</p>
+                <p>Melahirkan pelajar yang bertanggungjawab terhadap kerja yang dilakukan dengan menyediakan dokumen yang berkaitan dengan kerja.</p>
+                <p>Memberi pendedahan kepada pelajar bagaimana menyediakan dokumen dengan betul.</p>
+                <p>Membina keyakinan diri dalam iri pelajar semasa menyediakan dokumen.</p>
+                <p>Melengkapkan syarat wajib bagi pelajar untuk lulus Latihan Industri.</p>
+            </div>
+
+            <div class="card">
+                <h4>Contact</h4>
+                <p>Phone No: +60 11-5628 6856</p>
+                <P>Email: AdibSir05@gmail.com</P>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+let currentBanner = 0;
+let banners = document.querySelectorAll(".banner");
+
+function showBanner(index){
+
+    banners.forEach(b => b.classList.remove("active"));
+    banners[index].classList.add("active");
+
+}
+
+function nextBanner(){
+
+    currentBanner++;
+
+    if(currentBanner >= banners.length){
+        currentBanner = 0;
+    }
+
+    showBanner(currentBanner);
+}
+
+function prevBanner(){
+
+    currentBanner--;
+
+    if(currentBanner < 0){
+        currentBanner = banners.length - 1;
+    }
+
+    showBanner(currentBanner);
+}
+
+</script>
+</body>
+</html>
