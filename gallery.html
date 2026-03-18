@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Report</title>
+<link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+<ul class="nav-center">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+
+<li class="dropdown">
+<a href="#">Report</a>
+
+<ul class="dropdown-menu">
+<li><a href="week report.html">Weekly</a></li>
+<li><a href="#">Technical</a></li>
+</ul>
+
+</li>
+
+<li><a href="#">Overall</a></li>
+<li class="active"><a href="#">Gallery</a></li>
+
+</ul>
+
+</nav>
+
+<h2 class="app-title" style="margin-top: 20px;">Gallery</h2>
+
+<div class="gallery">
+
+<img src="Gallery/img1.jpg" onclick="openImage(this)">
+<img src="Gallery/img1.jpg" onclick="openImage(this)">
+<img src="Gallery/img1.jpg" onclick="openImage(this)">
+<img src="Gallery/img1.jpg" onclick="openImage(this)">
+<img src="Gallery/img1.jpg" onclick="openImage(this)">
+
+</div>
+
+
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+function openImage(img){
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+}
+
+function closeImage(){
+    document.getElementById("lightbox").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
