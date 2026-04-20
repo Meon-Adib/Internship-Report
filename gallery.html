@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Report</title>
+<link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+<ul class="nav-center">
+<li><a href="index.html">Home</a></li>
+<li><a href="introduction.html">Introduction</a></li>
+
+<li class="dropdown">
+<a href="#">Report</a>
+<ul class="dropdown-menu">
+<li><a href="week report.html">Weekly</a></li>
+<li><a href="#">Technical</a></li>
+</ul>
+</li>
+
+<li><a href="#">Overall</a></li>
+<li class="active"><a href="#">Gallery</a></li>
+</ul>
+</nav>
+
+<h2 class="app-title" style="margin-top: 20px;">Gallery</h2>
+
+<!-- AUTO GALLERY -->
+<div class="gallery" id="gallery"></div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// ===== SETTINGS =====
+const folder = "Gallery/malptacc/";
+
+// Put your image names here ONLY (no repeating HTML anymore)
+const images = [
+"IMG_20260126_103115.jpg",
+"IMG_20260204_131315.jpg",
+"IMG_20260211_132433.jpg",
+"IMG_20260213_091307.jpg",
+"IMG_20260213_091309.jpg",
+"IMG_20260213_091357.jpg",
+"IMG_20260213_091403.jpg",
+"IMG_20260213_091504.jpg",
+"IMG_20260213_091917.jpg",
+"IMG_20260213_093828.jpg",
+"IMG_20260213_093837.jpg",
+"IMG_20260213_095410.jpg",
+"IMG_20260213_095415.jpg",
+"IMG_20260213_095420.jpg",
+"IMG_20260213_102256.jpg",
+"IMG_20260213_103826.jpg",
+"IMG_20260213_103828.jpg",
+"IMG_20260213_112443.jpg",
+"IMG_20260213_112448.jpg",
+"IMG_20260213_112451.jpg",
+"IMG_20260213_112736.jpg",
+"IMG_20260302_064149.jpg",
+"IMG_20260302_162738.jpg",
+"IMG_20260302_162753.jpg",
+"IMG_20260303_061218.jpg",
+"IMG_20260303_062530.jpg",
+"IMG_20260303_062531.jpg",
+"IMG_20260313_075322.jpg",
+"IMG_20260316_064119.jpg",
+"IMG_20260407_160413.jpg",
+"IMG_20260407_160421.jpg",
+"IMG_20260407_160816.jpg",
+"1770945412040.png",
+"IMG_20260105_072023.jpg",
+"IMG_20260105_072120.jpg",
+"IMG_20260105_072927.jpg",
+"IMG_20260105_073508.jpg",
+"IMG_20260105_075426.jpg",
+"IMG_20260105_080447.jpg",
+"IMG_20260105_150901.jpg",
+"IMG_20260109_075547.jpg",
+"IMG_20260109_081532.jpg",
+"IMG_20260112_075743.jpg",
+"IMG_20260112_075744.jpg",
+"IMG_20260112_084042.jpg",
+"IMG_20260112_084913.jpg",
+"IMG_20260112_133919.jpg",
+"IMG_20260113_081036.jpg",
+"IMG_20260113_081044.jpg",
+"IMG_20260113_081057.jpg",
+"IMG_20260113_081107.jpg",
+"IMG_20260113_081229.jpg",
+"IMG_20260113_081312.jpg",
+"IMG_20260113_124015.jpg",
+"IMG_20260113_125733.jpg",
+"IMG_20260113_152118.jpg",
+"IMG_20260113_160720.jpg",
+"IMG_20260115_101500.jpg",
+"IMG_20260120_081134.jpg",
+"IMG_20260120_081153.jpg",
+"IMG_20260120_095529.jpg",
+"IMG_20260121_075339.jpg",
+"IMG_20260121_075342.jpg",
+"IMG_20260121_075349.jpg",
+"IMG_20260121_075806.jpg",
+"IMG_20260121_075812.jpg",
+"IMG_20260121_075818.jpg",
+"IMG_20260121_075819.jpg",
+"IMG_20260121_095655.jpg",
+"IMG_20260126_103108.jpg"
+];
+
+// ===== AUTO BUILD GALLERY =====
+const gallery = document.getElementById("gallery");
+
+// remove duplicates automatically
+const uniqueImages = [...new Set(images)];
+
+// optional: sort alphabetically (you can remove this line if you want original order)
+uniqueImages.sort();
+
+uniqueImages.forEach(file => {
+    const img = document.createElement("img");
+    img.src = folder + file;
+    img.loading = "lazy"; // faster loading
+    img.onclick = () => openImage(img);
+    gallery.appendChild(img);
+});
+
+// ===== LIGHTBOX =====
+function openImage(img){
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+}
+
+function closeImage(){
+    document.getElementById("lightbox").style.display = "none";
+}
+
+</script>
+
+</body>
+</html>
